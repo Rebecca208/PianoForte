@@ -1,15 +1,15 @@
 package it.game.pianoforte;
-import com.raylib.Colors;
+import com.raylib.Raylib.Color;
 
 public class Tasto {
     private String nota;
     private boolean premuto;
-    private Colors colorePremuto;
-    private Colors coloreNormale;
+    private Color colorePremuto;
+    private Color coloreNormale;
     private int WIDTH;
     private int HEIGHT;
 
-    public Tasto(String nota, boolean premuto, Colors colorePremuto, Colors coloreNormale, int WIDTH, int HEIGHT) {
+    public Tasto(String nota, boolean premuto, Color colorePremuto, Color coloreNormale, int WIDTH, int HEIGHT) {
         this.nota = nota;
         this.premuto = premuto;
         this.colorePremuto = colorePremuto;
@@ -34,19 +34,19 @@ public class Tasto {
         this.premuto = premuto;
     }
 
-    public Colors getColorePremuto() {
+    public Color getColorePremuto() {
         return colorePremuto;
     }
 
-    public void setColorePremuto(Colors colorePremuto) {
+    public void setColorePremuto(Color colorePremuto) {
         this.colorePremuto = colorePremuto;
     }
 
-    public Colors getColoreNormale() {
+    public Color getColoreNormale() {
         return coloreNormale;
     }
 
-    public void setColoreNormale(Colors coloreNormale) {
+    public void setColoreNormale(Color coloreNormale) {
         this.coloreNormale = coloreNormale;
     }
 
