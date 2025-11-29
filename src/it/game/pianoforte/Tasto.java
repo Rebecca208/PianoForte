@@ -1,4 +1,6 @@
 package it.game.pianoforte;
+import com.raylib.Colors;
+import com.raylib.Raylib;
 import com.raylib.Raylib.Color;
 
 public class Tasto {
@@ -6,63 +8,27 @@ public class Tasto {
     private boolean premuto;
     private Color colorePremuto;
     private Color coloreNormale;
-    private int WIDTH;
-    private int HEIGHT;
-
-    public Tasto(String nota, boolean premuto, Color colorePremuto, Color coloreNormale, int WIDTH, int HEIGHT) {
-        this.nota = nota;
-        this.premuto = premuto;
-        this.colorePremuto = colorePremuto;
-        this.coloreNormale = coloreNormale;
-        this.WIDTH = WIDTH;
-        this.HEIGHT = HEIGHT;
-    }
-
-    public String getNota() {
-        return nota;
-    }
-
-    public void setNota(String nota) {
-        this.nota = nota;
-    }
-
-    public boolean isPremuto() {
-        return premuto;
-    }
-
+    private int width;
+    private int height;
     public void setPremuto(boolean premuto) {
         this.premuto = premuto;
     }
-
-    public Color getColorePremuto() {
-        return colorePremuto;
-    }
-
-    public void setColorePremuto(Color colorePremuto) {
-        this.colorePremuto = colorePremuto;
-    }
-
-    public Color getColoreNormale() {
-        return coloreNormale;
-    }
-
     public void setColoreNormale(Color coloreNormale) {
         this.coloreNormale = coloreNormale;
     }
-
-    public int getWIDTH() {
-        return WIDTH;
+    public void setColorePremuto(Color colorePremuto) {
+        this.colorePremuto = colorePremuto;
+    }
+    public void setWidth(int width) {
+        this.width = width;
+    }
+    public void setHeight(int height) {
+        this.height = height;
     }
 
-    public void setWIDTH(int WIDTH) {
-        this.WIDTH = WIDTH;
-    }
-
-    public int getHEIGHT() {
-        return HEIGHT;
-    }
-
-    public void setHEIGHT(int HEIGHT) {
-        this.HEIGHT = HEIGHT;
+    public void render(int x, int y) {
+        Color colore = premuto ? colorePremuto : coloreNormale;
+        Raylib.DrawRectangle(x, y, width, height, colore);
+        Raylib.DrawRectangleLines(x, y, width, height, Colors.BLACK);
     }
 }

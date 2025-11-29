@@ -1,8 +1,8 @@
 // Java
 package it.game.pianoforte;
 import com.raylib.Colors;
-public class Bianco extends Tasto {
-    public Bianco() {
+public class Nero extends Tasto {
+    public Nero() {
         setColoreNormale(Colors.RAYWHITE);
         setColorePremuto(Colors.LIGHTGRAY);
         setWidth(30);
